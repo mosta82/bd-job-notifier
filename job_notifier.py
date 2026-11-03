@@ -27,11 +27,11 @@ class JobLinkParser(HTMLParser):
       self._href = None
       self._text = []
 
-# কনফিগারেশন
+# Configuration
 TARGET_URL = "https://bdgovtjob.net/"
 SENT_JOBS_FILE = "sent_jobs.json"
 
-# আপনার টেলিগ্রাম বট কনফিগারেশন
+# Telegram bot configuration
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
@@ -101,7 +101,7 @@ def check_jobs():
               f" দেখুন]({link})"
           )
 
-          # টেলিগ্রামে মেসেজ পাঠানো
+          # Send the message to Telegram
           send_telegram_message(msg)
 
           sent_jobs.append(link)
